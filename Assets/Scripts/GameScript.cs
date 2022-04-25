@@ -164,9 +164,10 @@ public class GameScript : MonoBehaviour
         Debug.Log("Mix");
         while (lvlThreeSwitch)
         {
-            if (coctailColor == lvlThreeColor)
+            //check for 90 % similarity
+            if ((coctailColor.r >= lvlThreeColor.r * 0.95 && coctailColor.r <= lvlThreeColor.r * 1.05) && (coctailColor.g >= lvlThreeColor.g * 0.95 && coctailColor.g <= lvlThreeColor.g * 1.05) && (coctailColor.b >= lvlThreeColor.b * 0.95 && coctailColor.b <= lvlThreeColor.b * 1.05))
             {
-                Debug.Log("LvlThree win");
+                Debug.Log("LvlThree win 90% similarity");
                 coctailColor = new Color(0, 0, 0);
                 lvlThreeSwitch = false;
                 lvlOneSwitch = true;
@@ -186,9 +187,10 @@ public class GameScript : MonoBehaviour
         }
         while (lvlTwoSwitch)
         {
-            if (coctailColor == lvlTwoColor)
+            //check for 90 % similarity
+            if (coctailColor.r >= lvlTwoColor.r * 0.95 && coctailColor.r <= lvlTwoColor.r * 1.05 && coctailColor.g >= lvlTwoColor.g * 0.95 && coctailColor.g <= lvlTwoColor.g * 1.05)
             {
-                Debug.Log("LvlTwo win");
+                Debug.Log("LvlTwo win 90% similarity");
                 coctailColor = new Color(0, 0, 0);
                 lvlThreeSwitch = true;
                 lvlTwoSwitch = false;
@@ -208,9 +210,10 @@ public class GameScript : MonoBehaviour
         }
         while (lvlOneSwitch)
         {
-            if (coctailColor == lvlOneColor)
+            //check for 90 % similarity
+            if (coctailColor.r >= lvlOneColor.r * 0.95 && coctailColor.r <= lvlOneColor.r * 1.05 && coctailColor.g >= lvlOneColor.g * 0.95 && coctailColor.g <= lvlOneColor.g * 1.05)
             {
-                Debug.Log("LvlOne win");
+                Debug.Log("LvlOne win 90% similarity");
                 coctailColor = new Color(0, 0, 0);
                 lvlTwoSwitch = true;
                 lvlOneSwitch = false;
