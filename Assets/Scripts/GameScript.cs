@@ -19,7 +19,7 @@ public class GameScript : MonoBehaviour
     private Color cucumberColor = new Color(0, 64, 0);
     private Color bananaColor = new Color(64, 64, 0);
 
-    private Color lvlOneColor = new Color(64, 96, 0, 3);
+    private Color lvlOneColor = new Color(64, 128, 0, 3);
     private Color lvlTwoColor = new Color(128, 96, 0, 4);
     private Color lvlThreeColor = new Color(128, 64, 64, 4);
 
@@ -64,6 +64,10 @@ public class GameScript : MonoBehaviour
     private GameObject lvlTwoMessengeCloudClone;
     private GameObject lvlThreeCharacterClone;
     private GameObject lvlThreeMessengeCloudClone;
+
+    private Color LoselvlOneColor;
+    private Color LoselvlTwoColor;
+    private Color LoselvlThreeColor;
 
     void Start()
     {
@@ -119,7 +123,7 @@ public class GameScript : MonoBehaviour
         Debug.Log("Banana");
         bananaClone[bananaCloneCounter] = Instantiate(bananaPrefab, spawnPosotion, standartRotation);
         bananaCloneCounter++;
-        coctailColor += orangeColor;
+        coctailColor += bananaColor;
     }
     private void DeleteAllCloneFruits()
     {
@@ -179,7 +183,7 @@ public class GameScript : MonoBehaviour
             }
             else
             {
-                Debug.Log($"LvlThree Lose {coctailColor}");
+                Debug.Log("LvlThree Lose " + ((lvlThreeColor.r / coctailColor.r) + (lvlThreeColor.g / coctailColor.g) + (lvlThreeColor.b / coctailColor.b)) / 3 * 100 + " % miss");
                 coctailColor = new Color(0, 0, 0);
                 DeleteAllCloneFruits();
                 break;
@@ -202,7 +206,7 @@ public class GameScript : MonoBehaviour
             }
             else
             {
-                Debug.Log($"LvlTwo Lose {coctailColor}");
+                Debug.Log("LvlTwo Lose " + ((lvlTwoColor.r / coctailColor.r) + (lvlTwoColor.g / coctailColor.g)) / 3 * 100 + " % miss");
                 coctailColor = new Color(0, 0, 0);
                 DeleteAllCloneFruits();
                 break;
@@ -226,7 +230,7 @@ public class GameScript : MonoBehaviour
             }
             else
             {
-                Debug.Log($"LvlOne Lose {coctailColor}");
+                Debug.Log("LvlOne Lose " + (((lvlOneColor.r / coctailColor.r) + (lvlOneColor.g / coctailColor.g))) / 3 * 100 + " % miss");
                 coctailColor = new Color(0, 0, 0);
                 DeleteAllCloneFruits();
                 break;
