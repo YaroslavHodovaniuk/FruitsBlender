@@ -2484,19 +2484,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3397a52a63962bf40871af1325d9facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greenApplePrefab: {fileID: 1460024973}
-  eggplantPrefab: {fileID: 1113389375}
-  tomatoPrefab: {fileID: 1536809672}
-  cucumberPrefab: {fileID: 1099834880}
-  cherryPrefab: {fileID: 1511535847}
-  orangePrefab: {fileID: 495063587}
-  bananaPrefab: {fileID: 600024227}
-  lvlOneCharacterPrefab: {fileID: 769392294386211940, guid: 7082ce5205851b349824507f15aa983e, type: 3}
-  lvlOneMessengeCloudPrefab: {fileID: 3778781983054666827, guid: 1901c6a1be965ce42a5f07c52f7272e4, type: 3}
-  lvlTwoCharacterPrefab: {fileID: 6361264130544800274, guid: c6dbf4bc2fb412e4f8b6015481873766, type: 3}
-  lvlTwoMessengeCloudPrefab: {fileID: 2031644120946962941, guid: 4b984c2613a496044a99ff51373d8ba3, type: 3}
-  lvlThreeCharacterPrefab: {fileID: 5434972763049695082, guid: 674e1431514575a4c8291682bdc00b96, type: 3}
-  lvlThreeMessengeCloudPrefab: {fileID: 2754962288001011759, guid: c338ae2cac9be77459749128339d196d, type: 3}
+  GreenApplePrefab: {fileID: 1460024973}
+  EggplantPrefab: {fileID: 1113389375}
+  TomatoPrefab: {fileID: 1536809672}
+  CucumberPrefab: {fileID: 1099834880}
+  CherryPrefab: {fileID: 1511535847}
+  OrangePrefab: {fileID: 495063587}
+  BananaPrefab: {fileID: 600024227}
+  LvlOneCharacterPrefab: {fileID: 769392294386211940, guid: 7082ce5205851b349824507f15aa983e, type: 3}
+  LvlOneMessengeCloudPrefab: {fileID: 3778781983054666827, guid: 1901c6a1be965ce42a5f07c52f7272e4, type: 3}
+  LvlTwoCharacterPrefab: {fileID: 6361264130544800274, guid: c6dbf4bc2fb412e4f8b6015481873766, type: 3}
+  LvlTwoMessengeCloudPrefab: {fileID: 2031644120946962941, guid: 4b984c2613a496044a99ff51373d8ba3, type: 3}
+  LvlThreeCharacterPrefab: {fileID: 5434972763049695082, guid: 674e1431514575a4c8291682bdc00b96, type: 3}
+  LvlThreeMessengeCloudPrefab: {fileID: 2754962288001011759, guid: c338ae2cac9be77459749128339d196d, type: 3}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

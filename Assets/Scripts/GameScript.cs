@@ -10,228 +10,228 @@ public class GameScript : MonoBehaviour
     private Vector3 spawnPosotion = new Vector3(145.076f, 3.5f, 1.596f);
     private Quaternion standartRotation = new Quaternion(0, 0, 0, 0);
 
-    private Color coctailColor = new Color(0, 0, 0);
-    private Color greenAppleColor = new Color(0, 64, 0);
-    private Color orangeColor = new Color(64, 32, 0);
-    private Color eggplantColor = new Color(64, 0, 64);
-    private Color tomatoColor = new Color(64, 0, 0);
-    private Color cherryColor = new Color(64, 0, 0);
-    private Color cucumberColor = new Color(0, 64, 0);
-    private Color bananaColor = new Color(64, 64, 0);
+    private Color _coctailColor = new Color(0, 0, 0);
+    private Color _greenAppleColor = new Color(0, 64, 0);
+    private Color _orangeColor = new Color(64, 32, 0);
+    private Color _eggplantColor = new Color(64, 0, 64);
+    private Color _tomatoColor = new Color(64, 0, 0);
+    private Color _cherryColor = new Color(64, 0, 0);
+    private Color _cucumberColor = new Color(0, 64, 0);
+    private Color _bananaColor = new Color(64, 64, 0);
 
-    private Color lvlOneColor = new Color(64, 128, 0, 3);
-    private Color lvlTwoColor = new Color(128, 96, 0, 4);
-    private Color lvlThreeColor = new Color(128, 64, 64, 4);
+    private Color _lvlOneColor = new Color(64, 128, 0, 3);
+    private Color _lvlTwoColor = new Color(128, 96, 0, 4);
+    private Color _lvlThreeColor = new Color(128, 64, 64, 4);
 
-    private bool lvlOneSwitch = true;
-    private bool lvlTwoSwitch = false;
-    private bool lvlThreeSwitch = false;
+    private bool _lvlOneSwitch = true;
+    private bool _lvlTwoSwitch = false;
+    private bool _lvlThreeSwitch = false;
 
-    private GameObject[] greenAppleClone = new GameObject[120];
-    private GameObject[] eggplantClone = new GameObject[120];
-    private GameObject[] tomatoClone = new GameObject[120];
-    private GameObject[] cucumberClone = new GameObject[120];
-    private GameObject[] cherryClone = new GameObject[120];
-    private GameObject[] orangeClone = new GameObject[120];
-    private GameObject[] bananaClone = new GameObject[120];
+    private GameObject[] _greenAppleClone = new GameObject[120];
+    private GameObject[] _eggplantClone = new GameObject[120];
+    private GameObject[] _tomatoClone = new GameObject[120];
+    private GameObject[] _cucumberClone = new GameObject[120];
+    private GameObject[] _cherryClone = new GameObject[120];
+    private GameObject[] _orangeClone = new GameObject[120];
+    private GameObject[] _bananaClone = new GameObject[120];
 
-    private int greenAppleCloneCounter = 1;
-    private int eggplantCloneCounter = 1;
-    private int tomatoCloneCounter = 1;
-    private int cucumberCloneCounter = 1;
-    private int cherryCloneCounter = 1;
-    private int orangeCloneCounter = 1;
-    private int bananaCloneCounter = 1;
+    private int _greenAppleCloneCounter = 1;
+    private int _eggplantCloneCounter = 1;
+    private int _tomatoCloneCounter = 1;
+    private int _cucumberCloneCounter = 1;
+    private int _cherryCloneCounter = 1;
+    private int _orangeCloneCounter = 1;
+    private int _bananaCloneCounter = 1;
 
-    public GameObject greenApplePrefab;
-    public GameObject eggplantPrefab;
-    public GameObject tomatoPrefab;
-    public GameObject cucumberPrefab;
-    public GameObject cherryPrefab;
-    public GameObject orangePrefab;
-    public GameObject bananaPrefab;
+    [SerializeField] private GameObject GreenApplePrefab;
+    [SerializeField] private GameObject EggplantPrefab;
+    [SerializeField] private GameObject TomatoPrefab;
+    [SerializeField] private GameObject CucumberPrefab;
+    [SerializeField] private GameObject CherryPrefab;
+    [SerializeField] private GameObject OrangePrefab;
+    [SerializeField] private GameObject BananaPrefab;
 
-    public GameObject lvlOneCharacterPrefab;
-    public GameObject lvlOneMessengeCloudPrefab;
-    public GameObject lvlTwoCharacterPrefab;
-    public GameObject lvlTwoMessengeCloudPrefab;
-    public GameObject lvlThreeCharacterPrefab;
-    public GameObject lvlThreeMessengeCloudPrefab;
+    [SerializeField] private GameObject LvlOneCharacterPrefab;
+    [SerializeField] private GameObject LvlOneMessengeCloudPrefab;
+    [SerializeField] private GameObject LvlTwoCharacterPrefab;
+    [SerializeField] private GameObject LvlTwoMessengeCloudPrefab;
+    [SerializeField] private GameObject LvlThreeCharacterPrefab;
+    [SerializeField] private GameObject LvlThreeMessengeCloudPrefab;
 
-    private GameObject lvlOneCharacterClone;
-    private GameObject lvlOneMessengeCloudClone;
-    private GameObject lvlTwoCharacterClone;
-    private GameObject lvlTwoMessengeCloudClone;
-    private GameObject lvlThreeCharacterClone;
-    private GameObject lvlThreeMessengeCloudClone;
+    private GameObject _lvlOneCharacterClone;
+    private GameObject _lvlOneMessengeCloudClone;
+    private GameObject _lvlTwoCharacterClone;
+    private GameObject _lvlTwoMessengeCloudClone;
+    private GameObject _lvlThreeCharacterClone;
+    private GameObject _lvlThreeMessengeCloudClone;
 
-    private Color LoselvlOneColor;
-    private Color LoselvlTwoColor;
-    private Color LoselvlThreeColor;
+    private Color _LoselvlOneColor;
+    private Color _LoselvlTwoColor;
+    private Color _LoselvlThreeColor;
 
     void Start()
     {
-        lvlOneCharacterClone = Instantiate(lvlOneCharacterPrefab, spawnPosotionCharacters, standartRotation);
-        lvlOneMessengeCloudClone = Instantiate(lvlOneMessengeCloudPrefab);
+        _lvlOneCharacterClone = Instantiate(LvlOneCharacterPrefab, spawnPosotionCharacters, standartRotation);
+        _lvlOneMessengeCloudClone = Instantiate(LvlOneMessengeCloudPrefab);
     }
 
    public void AddGreenApple()
     {
         Debug.Log("GreenApple");
-        greenAppleClone[greenAppleCloneCounter] = Instantiate(greenApplePrefab, spawnPosotion, standartRotation);
-        greenAppleCloneCounter++;
-        coctailColor += greenAppleColor;
+        _greenAppleClone[_greenAppleCloneCounter] = Instantiate(GreenApplePrefab, spawnPosotion, standartRotation);
+        _greenAppleCloneCounter++;
+        _coctailColor += _greenAppleColor;
         
     }
     public void AddEggplant()
     {
         Debug.Log("Eggplant");
-        eggplantClone[eggplantCloneCounter] = Instantiate(eggplantPrefab, spawnPosotion, standartRotation);
-        eggplantCloneCounter++;
-        coctailColor += eggplantColor;
+        _eggplantClone[_eggplantCloneCounter] = Instantiate(EggplantPrefab, spawnPosotion, standartRotation);
+        _eggplantCloneCounter++;
+        _coctailColor += _eggplantColor;
     }
     public void AddTomato()
     {
         Debug.Log("Tomato");
-        tomatoClone[tomatoCloneCounter] = Instantiate(tomatoPrefab, spawnPosotion, standartRotation);
-        tomatoCloneCounter++;
-        coctailColor += tomatoColor;
+        _tomatoClone[_tomatoCloneCounter] = Instantiate(TomatoPrefab, spawnPosotion, standartRotation);
+        _tomatoCloneCounter++;
+        _coctailColor += _tomatoColor;
     }
     public void AddCucumber()
     {
         Debug.Log("Cucumber");
-        cucumberClone[cucumberCloneCounter] = Instantiate(cucumberPrefab, spawnPosotion, standartRotation);
-        cucumberCloneCounter++;
-        coctailColor += cucumberColor;
+        _cucumberClone[_cucumberCloneCounter] = Instantiate(CucumberPrefab, spawnPosotion, standartRotation);
+        _cucumberCloneCounter++;
+        _coctailColor += _cucumberColor;
     }
     public void AddCherry()
     {
         Debug.Log("Cherry");
-        cherryClone[cherryCloneCounter] = Instantiate(cherryPrefab, spawnPosotion, standartRotation);
-        cherryCloneCounter++;
-        coctailColor += cherryColor;
+        _cherryClone[_cherryCloneCounter] = Instantiate(CherryPrefab, spawnPosotion, standartRotation);
+        _cherryCloneCounter++;
+        _coctailColor += _cherryColor;
     }
     public void AddOrange()
     {
         Debug.Log("Orange");
-        orangeClone[orangeCloneCounter] = Instantiate(orangePrefab, spawnPosotion, standartRotation);
-        orangeCloneCounter++;
-        coctailColor += orangeColor;
+        _orangeClone[_orangeCloneCounter] = Instantiate(OrangePrefab, spawnPosotion, standartRotation);
+        _orangeCloneCounter++;
+        _coctailColor += _orangeColor;
     }
     public void AddBanana()
     {
         Debug.Log("Banana");
-        bananaClone[bananaCloneCounter] = Instantiate(bananaPrefab, spawnPosotion, standartRotation);
-        bananaCloneCounter++;
-        coctailColor += bananaColor;
+        _bananaClone[_bananaCloneCounter] = Instantiate(BananaPrefab, spawnPosotion, standartRotation);
+        _bananaCloneCounter++;
+        _coctailColor += _bananaColor;
     }
     private void DeleteAllCloneFruits()
     {
-        for (; greenAppleCloneCounter >= 0; greenAppleCloneCounter--)
+        for (; _greenAppleCloneCounter >= 0; _greenAppleCloneCounter--)
         {
-            Destroy(greenAppleClone[greenAppleCloneCounter]);
+            Destroy(_greenAppleClone[_greenAppleCloneCounter]);
         }
-        for (; eggplantCloneCounter >= 0; eggplantCloneCounter--)
+        for (; _eggplantCloneCounter >= 0; _eggplantCloneCounter--)
         {
-            Destroy(eggplantClone[eggplantCloneCounter]);
+            Destroy(_eggplantClone[_eggplantCloneCounter]);
         }
-        for (; tomatoCloneCounter >= 0; tomatoCloneCounter--)
+        for (; _tomatoCloneCounter >= 0; _tomatoCloneCounter--)
         {
-            Destroy(tomatoClone[tomatoCloneCounter]);
+            Destroy(_tomatoClone[_tomatoCloneCounter]);
         }
-        for (; cucumberCloneCounter >= 0; cucumberCloneCounter--)
+        for (; _cucumberCloneCounter >= 0; _cucumberCloneCounter--)
         {
-            Destroy(cucumberClone[cucumberCloneCounter]);
+            Destroy(_cucumberClone[_cucumberCloneCounter]);
         }
-        for (; cherryCloneCounter >= 0; cherryCloneCounter--)
+        for (; _cherryCloneCounter >= 0; _cherryCloneCounter--)
         {
-            Destroy(cherryClone[cherryCloneCounter]);
+            Destroy(_cherryClone[_cherryCloneCounter]);
         }
-        for (; orangeCloneCounter >= 0; orangeCloneCounter--)
+        for (; _orangeCloneCounter >= 0; _orangeCloneCounter--)
         {
-            Destroy(orangeClone[orangeCloneCounter]);
+            Destroy(_orangeClone[_orangeCloneCounter]);
         }
-        for (; bananaCloneCounter >= 0; bananaCloneCounter--)
+        for (; _bananaCloneCounter >= 0; _bananaCloneCounter--)
         {
-            Destroy(bananaClone[bananaCloneCounter]);
+            Destroy(_bananaClone[_bananaCloneCounter]);
         }
-        greenAppleCloneCounter = 1;
-        eggplantCloneCounter = 1;
-        tomatoCloneCounter = 1;
-        cucumberCloneCounter = 1;
-        cherryCloneCounter = 1;
-        orangeCloneCounter = 1;
-        bananaCloneCounter = 1;
+        _greenAppleCloneCounter = 1;
+        _eggplantCloneCounter = 1;
+        _tomatoCloneCounter = 1;
+        _cucumberCloneCounter = 1;
+        _cherryCloneCounter = 1;
+        _orangeCloneCounter = 1;
+        _bananaCloneCounter = 1;
 }
     public void Mix()
     {
         Debug.Log("Mix");
-        while (lvlThreeSwitch)
+        while (_lvlThreeSwitch)
         {
             //check for 90 % similarity
-            if ((coctailColor.r >= lvlThreeColor.r * 0.95 && coctailColor.r <= lvlThreeColor.r * 1.05) && (coctailColor.g >= lvlThreeColor.g * 0.95 && coctailColor.g <= lvlThreeColor.g * 1.05) && (coctailColor.b >= lvlThreeColor.b * 0.95 && coctailColor.b <= lvlThreeColor.b * 1.05))
+            if ((_coctailColor.r >= _lvlThreeColor.r * 0.95 && _coctailColor.r <= _lvlThreeColor.r * 1.05) && (_coctailColor.g >= _lvlThreeColor.g * 0.95 && _coctailColor.g <= _lvlThreeColor.g * 1.05) && (_coctailColor.b >= _lvlThreeColor.b * 0.95 && _coctailColor.b <= _lvlThreeColor.b * 1.05))
             {
                 Debug.Log("LvlThree win 90% similarity");
-                coctailColor = new Color(0, 0, 0);
-                lvlThreeSwitch = false;
-                lvlOneSwitch = true;
+                _coctailColor = new Color(0, 0, 0);
+                _lvlThreeSwitch = false;
+                _lvlOneSwitch = true;
                 DeleteAllCloneFruits();
-                Destroy(lvlThreeMessengeCloudClone);
-                Destroy(lvlThreeCharacterClone);
-                lvlOneCharacterClone = Instantiate(lvlOneCharacterPrefab);
-                lvlOneMessengeCloudClone = Instantiate(lvlOneMessengeCloudPrefab);
+                Destroy(_lvlThreeMessengeCloudClone);
+                Destroy(_lvlThreeCharacterClone);
+                _lvlOneCharacterClone = Instantiate(LvlOneCharacterPrefab);
+                _lvlOneMessengeCloudClone = Instantiate(LvlOneMessengeCloudPrefab);
             }
             else
             {
-                Debug.Log("LvlThree Lose " + ((lvlThreeColor.r / coctailColor.r) + (lvlThreeColor.g / coctailColor.g) + (lvlThreeColor.b / coctailColor.b)) / 3 * 100 + " % miss");
-                coctailColor = new Color(0, 0, 0);
+                Debug.Log("LvlThree Lose " + ((_lvlThreeColor.r / _coctailColor.r) + (_lvlThreeColor.g / _coctailColor.g) + (_lvlThreeColor.b / _coctailColor.b)) / 3 * 100 + " % miss");
+                _coctailColor = new Color(0, 0, 0);
                 DeleteAllCloneFruits();
                 break;
             }
         }
-        while (lvlTwoSwitch)
+        while (_lvlTwoSwitch)
         {
             //check for 90 % similarity
-            if (coctailColor.r >= lvlTwoColor.r * 0.95 && coctailColor.r <= lvlTwoColor.r * 1.05 && coctailColor.g >= lvlTwoColor.g * 0.95 && coctailColor.g <= lvlTwoColor.g * 1.05)
+            if (_coctailColor.r >= _lvlTwoColor.r * 0.95 && _coctailColor.r <= _lvlTwoColor.r * 1.05 && _coctailColor.g >= _lvlTwoColor.g * 0.95 && _coctailColor.g <= _lvlTwoColor.g * 1.05)
             {
                 Debug.Log("LvlTwo win 90% similarity");
-                coctailColor = new Color(0, 0, 0);
-                lvlThreeSwitch = true;
-                lvlTwoSwitch = false;
+                _coctailColor = new Color(0, 0, 0);
+                _lvlThreeSwitch = true;
+                _lvlTwoSwitch = false;
                 DeleteAllCloneFruits();
-                Destroy(lvlTwoMessengeCloudClone);
-                Destroy(lvlTwoCharacterClone);
-                lvlThreeMessengeCloudClone = Instantiate(lvlThreeCharacterPrefab);
-                lvlThreeCharacterClone = Instantiate(lvlThreeMessengeCloudPrefab);
+                Destroy(_lvlTwoMessengeCloudClone);
+                Destroy(_lvlTwoCharacterClone);
+                _lvlThreeMessengeCloudClone = Instantiate(LvlThreeCharacterPrefab);
+                _lvlThreeCharacterClone = Instantiate(LvlThreeMessengeCloudPrefab);
             }
             else
             {
-                Debug.Log("LvlTwo Lose " + ((lvlTwoColor.r / coctailColor.r) + (lvlTwoColor.g / coctailColor.g)) / 3 * 100 + " % miss");
-                coctailColor = new Color(0, 0, 0);
+                Debug.Log("LvlTwo Lose " + ((_lvlTwoColor.r / _coctailColor.r) + (_lvlTwoColor.g / _coctailColor.g)) / 3 * 100 + " % miss");
+                _coctailColor = new Color(0, 0, 0);
                 DeleteAllCloneFruits();
                 break;
             }
         }
-        while (lvlOneSwitch)
+        while (_lvlOneSwitch)
         {
             //check for 90 % similarity
-            if (coctailColor.r >= lvlOneColor.r * 0.95 && coctailColor.r <= lvlOneColor.r * 1.05 && coctailColor.g >= lvlOneColor.g * 0.95 && coctailColor.g <= lvlOneColor.g * 1.05)
+            if (_coctailColor.r >= _lvlOneColor.r * 0.95 && _coctailColor.r <= _lvlOneColor.r * 1.05 && _coctailColor.g >= _lvlOneColor.g * 0.95 && _coctailColor.g <= _lvlOneColor.g * 1.05)
             {
                 Debug.Log("LvlOne win 90% similarity");
-                coctailColor = new Color(0, 0, 0);
-                lvlTwoSwitch = true;
-                lvlOneSwitch = false;
+                _coctailColor = new Color(0, 0, 0);
+                _lvlTwoSwitch = true;
+                _lvlOneSwitch = false;
                 DeleteAllCloneFruits();
-                Destroy(lvlOneMessengeCloudClone);
-                Destroy(lvlOneCharacterClone);
-                lvlTwoCharacterClone = Instantiate(lvlTwoCharacterPrefab);
-                lvlTwoMessengeCloudClone = Instantiate(lvlTwoMessengeCloudPrefab);
+                Destroy(_lvlOneMessengeCloudClone);
+                Destroy(_lvlOneCharacterClone);
+                _lvlTwoCharacterClone = Instantiate(LvlTwoCharacterPrefab);
+                _lvlTwoMessengeCloudClone = Instantiate(LvlTwoMessengeCloudPrefab);
 
             }
             else
             {
-                Debug.Log("LvlOne Lose " + (((lvlOneColor.r / coctailColor.r) + (lvlOneColor.g / coctailColor.g))) / 3 * 100 + " % miss");
-                coctailColor = new Color(0, 0, 0);
+                Debug.Log("LvlOne Lose " + (((_lvlOneColor.r / _coctailColor.r) + (_lvlOneColor.g / _coctailColor.g))) / 3 * 100 + " % miss");
+                _coctailColor = new Color(0, 0, 0);
                 DeleteAllCloneFruits();
                 break;
             }
